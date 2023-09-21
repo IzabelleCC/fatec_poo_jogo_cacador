@@ -12,14 +12,21 @@ public class Personagem{
             energia -= 2;
         }
         else{
-            System.out.println(nome + " esta sem enrgia para cacar...");
+            System.out.println(nome + " esta sem energia para cacar...");
         }
         fome = Math.min(fome + 1, 10);
         sono = Math.min(sono + 1, 10);
     }
 
     void comer(){
-        System.out.println(nome + " está comendo....");
+        if(fome >= 1){
+            System.out.println(nome + " está comendo....");
+            fome -= 1;
+        }
+        else{
+            System.out.println(nome + " nao esta com fome para comer...");
+        }
+        energia = Math.min(energia + 1,10);
     }
 
     void dormir(){
