@@ -14,23 +14,28 @@ public class Personagem{
         else{
             System.out.println(nome + " esta sem energia para cacar...");
         }
-        fome = Math.min(fome + 1, 10);
-        sono = Math.min(sono + 1, 10);
+        fome = Math.min(fome + 1,10);
+        sono = Math.min(sono + 1,10);
     }
 
     void comer(){
         if(fome >= 1){
-            System.out.println(nome + " está comendo....");
+            System.out.println(nome + " esta comendo....");
             fome -= 1;
+            energia = Math.min(energia + 1,10);
         }
         else{
             System.out.println(nome + " nao esta com fome para comer...");
-        }
-        energia = Math.min(energia + 1,10);
+        }  
     }
 
     void dormir(){
-        System.out.println(nome + " está dormindo...");
-    }
-
+        if(sono > 0){
+            System.out.println(nome + " esta dormindo....");
+            sono -= 1;
+            energia = energia++ > 10 ? 10 : energia++;
+        }
+        else{
+            System.out.println(nome + " nao esta com sono para dormir...");
+        }
 }
