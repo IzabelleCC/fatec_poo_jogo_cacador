@@ -7,7 +7,15 @@ public class Personagem{
 
     // comportamentos
     void cacar(){
-        System.out.println(nome + " está caçando...");
+        if(energia >= 2){
+            System.out.println(nome + " esta cacando...");
+            energia -= 2;
+        }
+        else{
+            System.out.println(nome + " esta sem enrgia para cacar...");
+        }
+        fome = Math.min(fome + 1, 10);
+        sono = Math.min(sono + 1, 10);
     }
 
     void comer(){
